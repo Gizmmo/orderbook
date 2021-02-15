@@ -1,0 +1,26 @@
+.adjuster {
+    margin: 10px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.adjustButton {
+    width: 50px;
+    height: 30px;
+}
+
+.amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,41 @@
+.bookrow {
+    position: relative;
+    display: flex;
+}
+
+.bookchart {
+    background: rgba(37, 87, 32, 0.329);
+    top:0;
+    bottom: 0;
+    right:0;
+    position: absolute;
+    z-index: 1;
+}
+
+.bookData {
+    flex: 1;
+    z-index: 2;
+}
+
+.bookTable {
+    text-align: right;
+    width:100%
+}
+
+.bids {
+    background: rgba(153, 46, 46, 0.39);
+}
+
+.bidsPrice {
+    color:rgba(214, 39, 39, 0.993);
+}
+
+.askPrice {
+    color:rgb(51, 160, 38)
+}
+
+.bookContainer {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
