@@ -2,7 +2,7 @@ import { OrderbookDataDisplayItem } from "../../types";
 import styles from "./Book.module.css";
 import cx from "classnames";
 
-export function Book({ name, items, isGreen: isRed = false }: BookProps) {
+export function Book({ name, items, isGreen = false }: BookProps) {
   if (items.length === 0) return null;
 
   var highest = Math.max(items[0].total, items[items.length - 1].total);
@@ -23,8 +23,8 @@ export function Book({ name, items, isGreen: isRed = false }: BookProps) {
             <tr className={styles.bookrow} key={item.price}>
               <td
                 className={cx(styles.bookData, {
-                  [styles.bidsPrice]: isRed,
-                  [styles.askPrice]: !isRed,
+                  [styles.bidsPrice]: isGreen,
+                  [styles.askPrice]: !isGreen,
                 })}
               >
                 {item.price.toLocaleString()}
@@ -36,7 +36,7 @@ export function Book({ name, items, isGreen: isRed = false }: BookProps) {
               <td
                 style={{ width: `${(item.total / highest) * 100}%` }}
                 data-testid={item.price}
-                className={cx(styles.bookchart, { [styles.bids]: isRed })}
+                className={cx(styles.bookchart, { [styles.bids]: isGreen })}
               />
             </tr>
           ))}
