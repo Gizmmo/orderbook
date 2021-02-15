@@ -35,7 +35,7 @@ Another issue is using things like HSTS so that if a user is say hit by a man in
 
 Using CSP to make sure that the websites scripts are only from trusted sources and not just being injected, and if somehow possible, only from self.
 
-## How would you change the kraken API you just used?
+## How would you change the in API you just used?
 
 So there are a few things. Firstly, I would change it so that all messages did not emit through a single message type. I would probably split them into various types, especially the removing of items. Using a 0 is alright, but it requires needing to look it up in documentation to see that it mean that that item has been removed from the list. This also allows our front end to efficiently be able to consume these messages, and not have to do if checks on every single message coming through. Other message types could include splitting asks and bids into thier own message type. Its a balance between performance and readability, I think delete for sure should be split out because its a weird side effect that any other developer or consumer would need to look up that it means to erase, but splitting the asks and bids and labeling the return is nicer from a self documentation point of view, but requires more data consistently over the wire.  For now I would say just at least to make a new message for deleting the items.
 
