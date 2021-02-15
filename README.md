@@ -4,7 +4,7 @@ First in the project directory, you run:
 
 ### `npm install`
 
-for the fstest version run 
+for the fastest version run 
 
 ### `npm run start:release`
 
