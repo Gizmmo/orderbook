@@ -6,7 +6,7 @@ describe("Number Adjuster", () => {
   const defaultProps: BookProps = {
     items: [{ price: 1, quantity: 5, total: 5 }],
     name: "SomeName",
-    isRed: false,
+    isGreen: false,
   };
 
   it("renders", () => {
@@ -23,15 +23,15 @@ describe("Number Adjuster", () => {
     expect(element).not.toBeInTheDocument();
   });
 
-  it("Renders red text when passed isRed", () => {
-    const { getByText } = render(<Book {...defaultProps} isRed />);
+  it("Renders red text when passed isGreen", () => {
+    const { getByText } = render(<Book {...defaultProps} isGreen />);
 
     const element = getByText(defaultProps.items[0].price.toLocaleString());
     expect(element).toHaveClass("bidsPrice");
   });
 
-  it("Renders red bars when passed isRed", () => {
-    const { getByTestId } = render(<Book {...defaultProps} isRed />);
+  it("Renders red bars when passed isGreen", () => {
+    const { getByTestId } = render(<Book {...defaultProps} isGreen />);
 
     const element = getByTestId(defaultProps.items[0].price);
     expect(element).toHaveClass("bids");

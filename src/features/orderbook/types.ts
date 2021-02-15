@@ -4,7 +4,18 @@ export interface SocketResponse {
   bids: SocketResponseData;
 }
 
-export type SocketResponseData = number[][];
+export type CurrentSocketState = "unset" | "ready" | "error";
+
+export interface OrderbookState {
+  asks: OrderbookData;
+  bids: OrderbookData;
+  grouping: number;
+  rows: number;
+  socketState: CurrentSocketState;
+}
+
+export type SocketTuple = [price: number, quantity: number];
+export type SocketResponseData = SocketTuple[];
 
 export type OrderbookData = { [id: number]: OrderbookDataItem };
 

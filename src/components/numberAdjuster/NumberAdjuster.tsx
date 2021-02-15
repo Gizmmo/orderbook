@@ -10,9 +10,21 @@ export function NumberAdjuster({
     <div className={styles.adjuster}>
       <div>{name}</div>
       <div className={styles.controls}>
-        <button className={styles.adjustButton} onClick={decrement} aria-label={`Decrement ${name}`}>-</button>
+        <button
+          className={styles.adjustButton}
+          onClick={decrement}
+          aria-label={`Decrement ${name}`}
+        >
+          -
+        </button>
         <span className={styles.amount}>{amount}</span>
-        <button className={styles.adjustButton} onClick={increment} aria-label={`Increment ${name}`}>+</button>
+        <button
+          className={styles.adjustButton}
+          onClick={increment}
+          aria-label={`Increment ${name}`}
+        >
+          +
+        </button>
       </div>
     </div>
   );

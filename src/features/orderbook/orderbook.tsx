@@ -7,8 +7,8 @@ import styles from "./orderbook.module.css";
 export function Orderbook() {
   const { asks, bids, grouping, rows, socketState } = useOrderbook();
 
-  if(socketState === 'unset') {
-    return <div>Loading...</div>
+  if (socketState === "unset") {
+    return <div>Loading...</div>;
   }
   if (socketState === "error") {
     return (
@@ -33,7 +33,7 @@ export function Orderbook() {
       />
       <div className={styles.books}>
         <Book items={asks} name="Asks" />
-        <Book items={bids} isRed name="Bids" />
+        <Book items={bids} isGreen name="Bids" />
       </div>
     </div>
   );

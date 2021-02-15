@@ -1,12 +1,4 @@
-import { OrderbookData, SocketResponseData } from "./types";
-
-export interface OrderbookState {
-  asks: OrderbookData;
-  bids: OrderbookData;
-  grouping: number;
-  rows: number;
-  socketState: CurrentSocketState;
-}
+import { OrderbookData, OrderbookState, SocketResponseData } from "./types";
 
 export const INITIALIZE_DATA = "initializeData";
 export const UPDATE_DATA = "updateData";
@@ -15,8 +7,6 @@ export const DECREMENT_GROUPING = "decrementGrouping";
 export const INCREMENT_ROWS = "incrementRows";
 export const DECREMENT_ROWS = "decrementRows";
 export const SET_ERROR = "setError";
-
-type CurrentSocketState = "unset" | "ready" | "error";
 
 export const groupingAmounts = [
   0.5,
